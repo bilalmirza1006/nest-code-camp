@@ -1,14 +1,60 @@
+# version: '3.8'
+# services:
+#   dev-db:
+#     image: postgres:13
+#     ports:
+#       # Correct indentation and key for 'ports'
+#       - "5434:5432"
+#     environment:
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: 123 # Use POSTGRES_PASSWORD instead of POSTGRES_Password (case-sensitive)
+#       POSTGRES_DB: nest
+#     networks:
+#       # Corrected indentation for networks
+#       - freecodecamp
+
+# networks:
+#   freecodecamp:
+
+
+
+# test-db:
+#     image: postgres:13
+#     ports:
+#       # Correct indentation and key for 'ports'
+#       - "5435:5432"
+#     environment:
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: 123 # Use POSTGRES_PASSWORD instead of POSTGRES_Password (case-sensitive)
+#       POSTGRES_DB: nest
+#     networks:
+#       # Corrected indentation for networks
+#       - freecodecamp
+
+# networks:
+#   freecodecamp:
 version: '3.8'
 services:
   dev-db:
     image: postgres:13
-    ports: # Correct indentation and key for 'ports'
+    ports:
       - "5434:5432"
-    environment: 
+    environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123 # Use POSTGRES_PASSWORD instead of POSTGRES_Password (case-sensitive)
+      POSTGRES_PASSWORD: 123
       POSTGRES_DB: nest
-    networks: # Corrected indentation for networks
+    networks:
+      - freecodecamp
+
+  test-db:
+    image: postgres:13
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    networks:
       - freecodecamp
 
 networks:
